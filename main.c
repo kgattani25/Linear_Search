@@ -1,31 +1,27 @@
-#include<stdio.h>
-#include<stdlib.h>
-int main()
-{
-   int size,i,pos=-1,val;
-   printf("enter size of array");
-   scanf("%d",&size);
-   int a[20];
-   for(i=0;i<size;i++)
-   {
-       printf("enter the array");
-       scanf("%d",&a[i]);
+import java.util.Scanner;
 
-   }
-   printf("enter value to be searched: ");
-   scanf("%d",&val);
-   for(i=0;i<size;i++)
-   {
-       if(a[i]==val)
-       {
-           pos=i;
-       }
-   }
-   if(pos==-1)
-   {
-       printf("not found");
-   }
-   else
-    {printf("found at %d",pos);}
-return 0;
+public final class linearsearch_3 {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int n = scn.nextInt();
+		int[] arr = { 10, 20, 30, 40, 50, 60 };
+		int low = 0;
+		int high = arr.length-1;
+		while (low <= high) {
+
+			int mid = (high + low) / 2;
+			if (n > arr[mid]) {
+				low = mid + 1;
+			} else if (n < arr[mid]) {
+				high = mid - 1;
+
+			} else {
+				System.out.println(mid);
+				return;
+			}
+		}
+		System.out.println("-1");
+	}
+
 }
